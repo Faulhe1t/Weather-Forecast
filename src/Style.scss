@@ -1,0 +1,160 @@
+body {
+  background: linear-gradient(to right, #b6d8ee, #f1e8bc);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.errorText {
+  padding: calc(0.2em + 0.2vw);
+  color: red;
+  font-family: FreeMono, monospace;
+  font-size: calc(0.7em + 0.5vw);
+}
+
+
+.searchArea {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: calc(0.5em + 0.5vw);
+
+  &__inputField {
+    outline: none;
+    padding: 0.4vw;
+    font-family: FreeMono, monospace;
+    text-align: center;
+    font-size: calc(0.7em + 0.5vw);
+    width: calc(9.1em + 13.9vw);
+    margin-right: calc(0.5em + 0.5vw);
+    color: black;
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: calc(1em + 1vw);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 1);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.50);
+    }
+  }
+
+  &__searchButton {
+    padding: 0.4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: calc(0.7em + 1.3vw);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 1);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.50);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &__searchIcon {
+      font-size: calc(0.9em + 0.7vw);
+    }
+  }
+}
+
+
+.mainWeatherCard {
+  padding: calc(1.1em + 0.9vw);
+  align-items: center;
+  position: static;
+  display: flex;
+
+  font-family: FreeMono, monospace;
+  flex-direction: column;
+
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: calc(1.1em + 0.9vw);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 1);
+
+  &__temperature {
+    font-size: calc(1.0em + 1.2vw);
+  }
+
+  &__weather {
+    font-size: calc(0.5em + 0.9vw);
+  }
+
+  &__city {
+    padding-top: 1.5vw;
+    font-size: calc(0.8em + 1vw);
+  }
+
+  &__mainIcon {
+    font-size: calc(1.5em + 4.7vw);
+    padding-inline: 2vw;
+  }
+}
+
+
+
+.forecastField {
+  display: flex;
+  flex-direction: row;
+}
+
+.dayWeatherCard {
+  margin: calc(0.3em + 0.5vw);
+  padding: calc(0.7em + 0.9vw);
+  align-items: center;
+  position: static;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: calc(0.9em + 0.9vw);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 1);
+
+  font-family: FreeMono, monospace;
+
+  &__date {
+    font-size: calc(0.6em + 0.4vw);
+  }
+
+  &__icon {
+    margin-top: 0.6vw;
+    font-size: calc(1.6em + 0.9vw);
+  }
+
+  &__temperature {
+    font-size: calc(0.6em + 0.4vw);
+  }
+
+  &__weather {
+    margin-top: 0.6vw;
+    font-size: calc(0.6em + 0.4vw);
+  }
+}
+
+
+.slider {
+  position: relative;
+  overflow: hidden;
+}

@@ -15,20 +15,20 @@ export interface WeatherDataProps {
   }[]
 }
 
+
 export const $weatherData = createStore<WeatherDataProps | null>(null)
 export const $cityInput = createStore<string>('')
-export const $err = createStore<string>('')
-
-
+export const $requestResult = createStore<boolean>(true)
+export const $cartIndex = createStore<number>(0)
 export const getGeolocationData = createEvent<WeatherDataProps>()
-
 export const getCityInput = createEvent<string>()
 
+
 export const getCityData = createEvent<WeatherDataProps>()
+export const setWrong = createEvent()
+export const setGood = createEvent()
+export const setCardIndex = createEvent<any>()
 
-export const showError = createEvent()
-
-export const hideError = createEvent()
 
 sample({
   clock: getGeolocationData,
@@ -38,7 +38,7 @@ sample({
 
 sample({
   clock: getCityInput,
-  fn: (input:string) => input,
+  fn: (input: string) => input,
   target: $cityInput
 })
 
@@ -49,12 +49,19 @@ sample({
 })
 
 sample({
-  clock:showError,
-  fn: () => 'Wrong city name!',
-  target: $err,
+  clock: setWrong,
+  fn: () => false,
+  target: $requestResult
 })
+
 sample({
-  clock:hideError,
-  fn: () => '',
-  target: $err,
+  clock: setGood,
+  fn: () => true,
+  target: $requestResult
+})
+
+sample({
+  clock: setCardIndex,
+  fn: (index: number) => index,
+  target: $cartIndex
 })

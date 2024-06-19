@@ -1,31 +1,13 @@
-import axios from "axios";
 import React from "react";
 import { $weatherData, getGeolocationData } from "../Store/model";
 import { useUnit } from "effector-react";
 import { BsCloudFog2Fill, BsFillCloudFill, BsFillCloudRainFill, BsFillSunFill } from "react-icons/bs";
 import { TiWeatherPartlySunny } from "react-icons/ti";
-import { api_Endpoint, api_key } from "../Models/data";
 
 export const MainWeather = () => {
 
   const [weatherData, getGeolocation] = useUnit([$weatherData, getGeolocationData])
-  const fetchCurrentWeather = async (lat: number, lon: number) => {
-    const url = `${ api_Endpoint }forecast?lat=${ lat }&lon=${ lon }&appid=${ api_key }&units=metric`
-    const response = await axios.get(url)
-    return response.data
-  }
 
-  React.useEffect(() => {
-    navigator.geolocation.getCurrentPosition(position => {
-      const {latitude, longitude} = position.coords;
-      Promise.all([fetchCurrentWeather(latitude, longitude)]).then(
-        ([currentWeather]) => {
-          getGeolocation(currentWeather)
-          console.log(weatherData)
-        }
-      )
-    })
-  }, [])
 
   const iconChanger = (weather: string) => {
     let iconElement: React.ReactNode

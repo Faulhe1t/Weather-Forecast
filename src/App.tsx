@@ -1,20 +1,16 @@
 import React from 'react';
 import { SearchingField } from "./Components/searchString";
 import "./Style.css"
-import { MainWeather } from "./Components/todayMainWeather";
-import { WeatherField } from "./Components/weatherFileld";
-import { ErrorMessage } from "./Components/errorMessageField";
+import { MainContent } from "./Components/conent";
 
 function App() {
+
   return (
     <div className="App">
-
-      <ErrorMessage></ErrorMessage>
       <SearchingField></SearchingField>
-      <MainWeather></MainWeather>
-      <WeatherField></WeatherField>
+      <MainContent></MainContent>
     </div>
-  );
+  )
 }
 
 export default App;

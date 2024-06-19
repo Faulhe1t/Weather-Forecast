@@ -1,5 +1,5 @@
 import { useUnit } from "effector-react";
-import { $err } from "../Store/model";
+import { $err } from "../store/model";
 
 
 export const ErrorMessage = () => {

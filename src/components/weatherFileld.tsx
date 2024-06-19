@@ -1,5 +1,8 @@
 import { WeatherCard } from "./weatherDayCard";
 
+
+//TODO заменить на map массив
+
 export const WeatherField = () => {
   const days = [];
 
@@ -8,6 +11,6 @@ export const WeatherField = () => {
   }
 
   return <div className='forecastField'>
-    {days}
+    { days }
   </div>
 }

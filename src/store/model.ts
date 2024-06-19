@@ -1,19 +1,6 @@
 import { createEvent, createStore, sample } from "effector";
+import { WeatherDataProps } from "../models/data";
 
-export interface WeatherDataProps {
-  city: {
-    name: string
-  }
-  list: {
-    dt_txt: string
-    main: {
-      temp: number
-    }
-    weather: {
-      main: string
-    }[]
-  }[]
-}
 
 export const $weatherData = createStore<WeatherDataProps | null>(null)
 export const $cityInput = createStore<string>('')
@@ -38,7 +25,7 @@ sample({
 
 sample({
   clock: getCityInput,
-  fn: (input:string) => input,
+  fn: (input: string) => input,
   target: $cityInput
 })
 
@@ -49,12 +36,12 @@ sample({
 })
 
 sample({
-  clock:showError,
+  clock: showError,
   fn: () => 'Wrong city name!',
   target: $err,
 })
 sample({
-  clock:hideError,
+  clock: hideError,
   fn: () => '',
   target: $err,
 })

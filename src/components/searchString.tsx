@@ -1,7 +1,7 @@
 import { useUnit } from "effector-react";
 import { CiSearch } from "react-icons/ci";
-import { $cityInput, getCityData, getCityInput, hideError, showError, WeatherDataProps } from "../Store/model";
-import { api_Endpoint, api_key } from "../Models/data";
+import { $cityInput, getCityData, getCityInput, hideError, showError } from "../store/model";
+import { api_Endpoint, api_key, WeatherDataProps } from "../models/data";
 import axios from "axios";
 
 export const SearchingField = () => {

@@ -1,5 +1,5 @@
 import { useUnit } from "effector-react";
-import { $weatherData } from "../Store/model";
+import { $weatherData } from "../store/model";
 import React, { FunctionComponent } from "react";
 import { BsCloudFog2Fill, BsFillCloudFill, BsFillCloudRainFill, BsFillSunFill } from "react-icons/bs";
 import { TiWeatherPartlySunny } from "react-icons/ti";
@@ -11,6 +11,8 @@ interface indexProps {
 export const WeatherCard: FunctionComponent<indexProps> = ({value}) => {
 
   const weatherData = useUnit($weatherData)
+
+  //TODO избавиться от повторов
 
   const iconChanger = (weather: string) => {
     let iconElement: React.ReactNode
